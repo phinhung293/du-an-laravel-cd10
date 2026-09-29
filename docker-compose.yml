@@ -46,5 +46,14 @@ services:
       timeout: 5s
       retries: 10
 
+  # Container Flask
+  flask-app:
+    build: ./flask-app
+    container_name: flask_app
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./flask-app:/app
+
 volumes:
   dbdata:
